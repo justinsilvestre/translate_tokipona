@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+<% require_relative 'lib/dic.rb' %>
+
+<% tp_en_hash.each do |tp, roles| %>
+  <% roles.each do |tp_role, en_roles| %>
+    <%= tp %>:
+      words: <%= tp %>
+      role: <%= tp_role %>
+  <% end %>
+<% end %>

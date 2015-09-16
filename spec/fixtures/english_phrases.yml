@@ -1,0 +1,34 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+<% require_relative 'lib/dic.rb' %>
+<% TokiponaPhrase.all.each do |tp| %>
+
+
+<% end %>
+
+one:
+  user_id: 
+  tokipona_phrase_id: 
+  base_form: MyString
+  role: MyString
+  forms: MyText
+  uses: 1
+
+# two:
+#   user_id: 
+#   tokipona_phrase_id: 
+#   base_form: MyString
+#   role: MyString
+#   forms: MyText
+#   uses: 1
+
+
+# tp_en_hash.each do |tp, roles|
+#   roles.each do |tp_role, en_roles|
+#     tp_phrase = TokiponaPhrase.create(words: tp, role: tp_role)
+#     en_roles.each do |en_role, en_phrases|
+#       en_phrases.each do |en_phrase|
+#         tp_phrase.english_phrases.create(role: en_role, base_form: en_phrase) unless EnglishPhrase.find_by(tokipona_phrase_id: tp_phrase.id, role: en_role, base_form: en_phrase)
+#       end
+#     end
+#   end
+# end

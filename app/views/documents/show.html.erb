@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @document.user %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @document.title %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @document.source %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @document.url %>
+</p>
+
+<p>
+  <strong>Original text:</strong>
+  <%= @document.original_text %>
+</p>
+
+<p>
+  <strong>Analysis:</strong>
+  <%= @document.analysis %>
+</p>
+
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>

@@ -1,5 +1,13 @@
 module GrammarHelper
 
+	def head_role(branch)
+		return 'pro' if !native_tokipona?(branch['head'])
+		return 't' if branch['direct_objects']
+		return 'prep' if branch['prepositional_object']
+		return 'prev' if branch['gerundive']
+		'i'
+	end
+
   ROLE_CORRESPONDENCES =  { p: %i'x',
         i: %i'vi n adj adv pns pnp pnsn pnso pnpn pnpo pnin d dp ds',
         t: %i'vt',
@@ -160,4 +168,4 @@ module GrammarHelper
 	def principal_tokipona_form(word)
 		TOKIPONA_WORDS[word.to_sym].to_s
 	end
-endgr
+end

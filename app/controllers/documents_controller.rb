@@ -1,5 +1,7 @@
 class DocumentsController < ApplicationController
-  before_action :set_document, only: [:show, :edit, :update, :destroy]
+  before_action :set_document, only: %i[show edit update destroy]
+  before_action :authenticate_user!, except: %i[index show new]
+  before_action :own_document, only: %i[edit update destroy]
 
   # GET /documents
   # GET /documents.json
@@ -24,11 +26,11 @@ class DocumentsController < ApplicationController
   # POST /documents
   # POST /documents.json
   def create
-    @document = Document.new(document_params)
+    @document = current_user.documents.new(document_params)
 
     respond_to do |format|
       if @document.save
-        format.html { redirect_to @document, notice: 'Document was successfully created.' }
+        format.html { redirect_to @document, flash: { success: 'Document was successfully created.' } }
         format.json { render :show, status: :created, location: @document }
       else
         format.html { render :new }
@@ -42,7 +44,7 @@ class DocumentsController < ApplicationController
   def update
     respond_to do |format|
       if @document.update(document_params)
-        format.html { redirect_to @document, notice: 'Document was successfully updated.' }
+        format.html { redirect_to @document, flash: { success: 'Document was successfully updated.' } }
         format.json { render :show, status: :ok, location: @document }
       else
         format.html { render :edit }
@@ -56,7 +58,7 @@ class DocumentsController < ApplicationController
   def destroy
     @document.destroy
     respond_to do |format|
-      format.html { redirect_to documents_url, notice: 'Document was successfully destroyed.' }
+      format.html { redirect_to documents_url, flash: { success: 'Document was successfully destroyed.' } }
       format.json { head :no_content }
     end
   end
@@ -67,8 +69,15 @@ class DocumentsController < ApplicationController
       @document = Document.find(params[:id])
     end
 
+    def own_document
+      unless current_user == @document.user
+        redirect_to @document, flash: { error: 'You may only make changes to documents you submitted yourself.' }
+      end
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def document_params
-      params.require(:document).permit(:user_id, :title, :source, :url, :original_text, :analysis)
+      params.require(:document).permit(:title, :source, :url, :original_text, :analysis)
     end
+
 end

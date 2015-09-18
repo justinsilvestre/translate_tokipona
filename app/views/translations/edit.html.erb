@@ -1,6 +1,8 @@
 <h1>Editing Translation</h1>
 
-<%= render 'form' %>
+<%= form_for @translation do |f| %>
+<%= render 'form', f: f %>
+<% end %>
 
 <%= link_to 'Show', @translation %> |
 <%= link_to 'Back', translations_path %>

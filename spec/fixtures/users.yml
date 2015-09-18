@@ -5,10 +5,12 @@
 # below each fixture, per the syntax in the comments below
 
   jatin:
+    id: 1
     username: jatin
     email: justinsilvestre@gmail.com
     encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
   sonja:
+    id: 2
     username: sonja
     email: notherrealemail@yahoo.com
     encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>

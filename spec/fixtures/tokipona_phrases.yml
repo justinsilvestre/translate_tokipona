@@ -4,7 +4,7 @@
 
 <% tp_en_hash.each do |tp, roles| %>
   <% roles.each do |tp_role, en_roles| %>
-    <%= tp %>:
+    <%= tp %>_<%= tp_role %>:
       words: <%= tp %>
       role: <%= tp_role %>
   <% end %>

@@ -1,11 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_id: 
-  document_id: 
-  analysis: MyText
+  user: jatin
+  document: one
+  analysis:
 
 two:
-  user_id: 
-  document_id: 
-  analysis: MyText
+  user: jatin
+  document: two
+  analysis:
+
+three:
+  user: sonja
+  document: one
+  analysis: 

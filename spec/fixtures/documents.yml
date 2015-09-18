@@ -1,17 +1,26 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+<% require_relative './lib/test_text.rb' %>
 
 one:
-  user_id: 
+  user: jatin
   title: MyString
   source: MyString
   url: MyString
-  original_text: MyText
-  analysis: MyText
+  original_text: "<%= tomo_palisa_suli_text %>"
+  analysis: 
 
 two:
-  user_id: 
+  user: jatin
   title: MyString
   source: MyString
   url: MyString
-  original_text: MyText
-  analysis: MyText
+  original_text: 'mi olin e ma Mewika!'
+  analysis: 
+
+three:
+  user: sonja
+  title: nanana
+  source: nanana
+  url: 
+  original_text: 'toki pona li toki pona. toki li pona.'
+  analysis: 

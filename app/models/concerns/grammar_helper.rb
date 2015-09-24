@@ -166,6 +166,17 @@ module GrammarHelper
 	end
 
 	def principal_tokipona_form(word)
-		TOKIPONA_WORDS[word.to_sym].to_s
+		case word.to_sym
+		when :oko
+			return 'lukin'
+		when :ki
+			return 'a'
+		when :namako
+			return 'sin'
+		when :ali
+			return 'ale'
+		else
+			return word.to_s
+		end
 	end
 end

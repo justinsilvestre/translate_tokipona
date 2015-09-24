@@ -1,34 +1,33 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @document.title %></h1>
 
 <p>
-  <strong>User:</strong>
-  <%= @document.user %>
-</p>
+  jan <%= @document.user.username %> li pali e ni.
+  <br>
+  <small>by <%= @document.user.username %></small>
+</p
 
-<p>
-  <strong>Title:</strong>
-  <%= @document.title %>
-</p>
-
-<p>
-  <strong>Source:</strong>
-  <%= @document.source %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @document.url %>
-</p>
-
-<p>
-  <strong>Original text:</strong>
-  <%= @document.original_text %>
-</p>
-
-<p>
-  <strong>Analysis:</strong>
-  <%= @document.analysis %>
-</p>
+<% if @document.source %>
+  <p>
+  <% if @document.url %>
+    <%= link_to @document.source, @document.url %>
+  <% else %>
+    <%= @document.source %>
+  <% end %>
+  </p>
+<% end %>
 
 <%= link_to 'Edit', edit_document_path(@document) %> |
 <%= link_to 'Back', documents_path %>
+
+<div id="root"></div>
+
+<script>
+(function() {
+  var doc = new Tokipona.Document({
+    tokipona_sentences: <%= raw @document.analysis %>,
+    tokipona_phrases: <%= raw @document.phrases.to_json %>,
+    english_phrases: <%= raw @document.english_phrases.to_json %>
+  })
+  doc.mount(document.getElementById('root'));
+})()
+</script>

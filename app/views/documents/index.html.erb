@@ -1,37 +1,20 @@
-<p id="notice"><%= notice %></p>
+<h1>lipu pi toki pona <small>Toki Pona texts</small></h1>
 
-<h1>Listing Documents</h1>
+<%= paginate @documents %>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Title</th>
-      <th>Source</th>
-      <th>Url</th>
-      <th>Original text</th>
-      <th>Analysis</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<ul id="documents-list">
+  
+  <% @documents.each do |document| %>
 
-  <tbody>
-    <% @documents.each do |document| %>
-      <tr>
-        <td><%= document.user %></td>
-        <td><%= document.title %></td>
-        <td><%= document.source %></td>
-        <td><%= document.url %></td>
-        <td><%= document.original_text %></td>
-        <td><%= document.analysis %></td>
-        <td><%= link_to 'Show', document %></td>
-        <td><%= link_to 'Edit', edit_document_path(document) %></td>
-        <td><%= link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <li>
+    <h2><%= link_to document.title, document %></h2>
+    <p>by <%= link_to document.user.username, "#" %></p>
+    <p><%= truncate(document.original_text, length: 140, omission: '...', separator: ' ') %>
+      <%= link_to('awen', document) %></p>
+  </li>
 
-<br>
+  <% end %>
+
+</ul>
 
 <%= link_to 'New Document', new_document_path %>

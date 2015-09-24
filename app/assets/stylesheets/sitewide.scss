@@ -1,0 +1,82 @@
+body { 
+	font-size: 18px;
+	font-family: 'Roboto';
+	background-color: #E9F4FE;
+}
+
+a {
+	color: #D6B554;
+	text-decoration: none;
+	&:hover {
+		color: #F3B600;
+	}
+}
+
+h1, h2 {
+	text-align: center;
+}
+
+$base-width: 800px;
+
+header {
+	max-width: $base-width;
+	margin: 0 auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing		: border-box;
+	box-sizing				: border-box;
+	padding: 1rem 2.4rem;
+
+		overflow: auto;
+
+	nav {
+		float: right;
+		color: cadetblue;
+
+		span {
+			padding-left: 1.5rem;
+		}
+
+		a {
+			color: inherit;
+		}
+	}
+}
+
+.flash {
+	max-width: $base-width;
+	margin: 0 auto;
+	padding: 1rem;
+  background-color: #F7FFFF;
+  border: solid 1px #B9FFC1;
+  margin: 2rem;
+}
+
+.main-wrapper {
+	max-width: $base-width;
+	margin: 0 auto;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing		: border-box;
+		box-sizing				: border-box;
+	padding: 3.2rem;
+
+	background-color: white;
+	border-radius: 1rem;
+
+	nav.pagination {
+		text-align: right;
+	}
+}
+
+input[type=submit] {
+	font-size: 1.3em;
+	background-color: #85A4B5;
+	&:hover { background-color: #D2DDE5}
+	border: 0;
+	color: white;
+	padding: .3em;
+	-webkit-border-radius	: .2em;
+	-moz-border-radius		: .2em;
+	-ms-border-radius			: .2em;
+	-o-border-radius			: .2em;
+	border-radius					: .2em;
+}

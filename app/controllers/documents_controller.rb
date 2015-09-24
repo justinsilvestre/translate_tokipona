@@ -1,12 +1,12 @@
 class DocumentsController < ApplicationController
   before_action :set_document, only: %i[show edit update destroy]
-  before_action :authenticate_user!, except: %i[index show new]
+  before_action :authenticate_user!, except: %i[index show]
   before_action :own_document, only: %i[edit update destroy]
 
   # GET /documents
   # GET /documents.json
   def index
-    @documents = Document.all
+    @documents = Document.page(params[:page]).per 10
   end
 
   # GET /documents/1

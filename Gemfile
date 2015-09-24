@@ -2,8 +2,9 @@ source 'https://rubygems.org'
 
 gem 'devise'
 gem 'normalize-rails'
-gem 'tokipona', '1.0.1', git: 'https://github.com/justinsilvestre/tokipona.git'
+gem 'tokipona', '2.0.1', git: 'https://github.com/justinsilvestre/tokipona.git'
 gem 'puma'
+gem 'kaminari'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'

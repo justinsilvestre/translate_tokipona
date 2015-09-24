@@ -1,3 +1,4 @@
+  <div id="root"></div>
 
   <% if @translation.errors.any? %>
     <div id="error_explanation">
@@ -12,15 +13,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :analysis %><br>
-    <%= f.text_area :analysis %>
+    <input type="hidden" id="translation_analysis" name="translation[analysis]">
   </div>
+  
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit onclick: "document.getElementById('translation_analysis').value = translation.package();" %>
   </div>
 
 
-<script>
-  <%= raw('window.english_phrases = ' + @translation.english_phrases.to_json) %>
-  <%= raw('window.tokipona_phrases = ' + @translation.document.phrases.to_json) %>
-</script>
+<%= render 'mount' %>

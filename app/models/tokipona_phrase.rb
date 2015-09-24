@@ -9,7 +9,7 @@ class TokiponaPhrase < ActiveRecord::Base
 	end
 
 	def self.all_in(phrase_data)
-		TokiponaPhrase.where(words: phrase_data.map { |p| p[:words] })
+		TokiponaPhrase.where(words: phrase_data.map { |p| p[:word] })
 	end
 
 	def self.create_proper_noun(word)

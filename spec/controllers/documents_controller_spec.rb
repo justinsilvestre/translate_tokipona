@@ -19,11 +19,11 @@ RSpec.describe DocumentsController, type: :controller do
     expect(:documents).to be
   end
 
-  it "gets new" do
-    get :new
+  # it "gets new" do
+  #   get :new
 
-    assert_response :success
-  end
+  #   assert_response :success
+  # end
 
   it "redirects unregistered user to login on create attempt" do
     expect { post :create, document: { analysis: @document.analysis, original_text: @document.original_text, source: @document.source, title: @document.title, url: @document.url, user_id: @document.user_id } }

@@ -1,0 +1,51 @@
+.voc { color: #C7BC0B; }
+
+.csub { color: #D8AACA; }
+.csub.comp { color: #D08ABB; }
+.csub.compcomp { color: #CA60AA; }
+
+.cpre { color: #EA8D9E; }
+.cpre.comp{ color: #F07D92; }
+.cpre.compcomp { color: #FB6A84; }
+
+.subj { color: #A3AB8D; }
+.subj.comp { color: #868A7B; }
+
+.pred { color: #4682B4; }
+.pred.comp { color: #5AAACE }
+
+.pred.drob { color: #7DAB4E; }
+.pred.drob.comp { color: #409E6B }
+.pred.drob.compcomp { color: #40929E }
+
+.pred.geru {}
+.pred.geru.comp {}
+
+.particle { font-weight: 100 }
+
+.highlighted { color: #F8D115 !important; }
+
+.phrasepicker, .popup-gloss {
+	display: none;
+	position: absolute;
+	background-color:  rgba(220,230,240,.9);
+	border: solid 1px #D6E4F9;
+	border-radius: .3em;
+	padding: 1em;
+
+	font-size: .8rem;
+	color: black;
+}
+
+.sentence-pair {
+	display: inline-block;
+	padding-bottom: 1.6em;
+	padding-right: 1.6em;
+}
+.tp-sentence {
+	font-size: 1.3em;
+}
+.en-sentence {
+	padding-top: .3em;
+	padding-lefT: .1em;
+}

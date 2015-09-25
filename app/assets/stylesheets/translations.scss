@@ -1,4 +1,9 @@
 .phrasepicker-role {
 	display: block;
-	cursor: pointer
+}
+
+.phrasepicker-choice {
+	cursor: pointer;
+	&:after { content: ' '; }
+	&:last-child:after { content: ''; }
 }

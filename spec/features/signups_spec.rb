@@ -3,12 +3,12 @@ require 'rails_helper'
 RSpec.feature "Signup", type: :feature do
   scenario 'with valid email and password' do
   	sign_up_with 'valid@example.com', 'Potatoface McGee', 'password'
-    expect(page).to have_content('Log Out')
+    expect(page).to have_content('Log out')
   end
 
   scenario 'with invalid email' do
   	sign_up_with 'invalid_email', 'Patataface McGah', 'password'
-    expect(page).to have_content('Log In')
+    expect(page).to have_content('Log in')
   end
 
   def sign_up_with(email, username, password, password_confirmation=nil)

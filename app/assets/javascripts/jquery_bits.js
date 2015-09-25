@@ -11,7 +11,7 @@ $(document).ready(function(){
 	}
 
 
-	$(document).on('click', function(e) {
+	$('#root').on('click', function(e) {
 		window.setTimeout(function(){
 	    		toMouse($('.phrasepicker'),e);
 	    		toMouse($('.popup-gloss'),e);

@@ -24,5 +24,5 @@ tp_en_hash.each do |tp, roles|
 	end
 end
 
-justin.documents.create(title: 'lipu ni', original_text: 'toki pona li toki lili. jan Sonja li mama pi toki ni. kepeken toki pona la jan li pilin pona. jan jatin li pali e lipu ni. o lukin e lipu ni, o kama sona e toki pona! jan ale li ken lukin e lipu mute, li ken pali e lipu sin a!')
+justin.documents.create(title: 'lipu ni', original_text: 'toki pona li toki lili. jan Sonja li mama pi toki ni. kepeken toki pona la jan li pilin pona. jan Jatin li pali e lipu ni. o lukin e lipu ni, o kama sona e toki pona! jan ale li ken lukin e lipu mute, li ken pali e lipu sin a!')
 justin.documents.create(title: 'tomo palisa suli pi nimi Pape', original_text: tomo_palisa_suli_text)

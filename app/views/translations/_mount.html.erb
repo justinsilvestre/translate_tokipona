@@ -3,7 +3,7 @@
     tokipona_sentences: <%= raw @translation.document.analysis %>,
     tokipona_phrases: <%= raw @translation.document.phrases.to_json %>,
     english_phrases: <%= raw @translation.english_phrases.to_json %>,
-    english_sentences: <%= raw @translation.analysis %>
+    english_sentences: <%= raw (@translation.analysis || 'null') %>
   });
   translation.mount(document.getElementById('root'));
 </script>

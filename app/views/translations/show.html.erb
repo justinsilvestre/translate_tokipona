@@ -1,18 +1,9 @@
-<p>
-  <strong>User:</strong>
-  <%= @translation.user %>
-</p>
+<h1><%= @translation.document.title %></h1>
 
-<p>
-  <strong>Document:</strong>
-  <%= @translation.document %>
+<p id="root">
 </p>
-
 
 <%= render 'mount' %>
 
 <%= link_to 'Edit', edit_translation_path(@translation) %> |
 <%= link_to 'Back', translations_path %>
-
-<p id="root">
-</p>

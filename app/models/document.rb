@@ -11,6 +11,10 @@ class Document < ActiveRecord::Base
 
   before_save :prepare_analysis, :create_proper_nouns
 
+  def self.untranslated
+    Document.where('id NOT IN (SELECT DISTINCT(document_id) FROM translations)')
+  end
+
   def phrases
    TokiponaPhrase.all_in phrase_data
   end

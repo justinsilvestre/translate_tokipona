@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  get 'static_pages/home'
 
-  root 'documents#index'
+  root 'static_pages#home'
 
   devise_for :users, path_names: {
     sign_in: 'login',
